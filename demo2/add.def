@@ -1,0 +1,3 @@
+LIBRARY add
+EXPORTS
+    TestAdd @1    ;TestAdd @1
