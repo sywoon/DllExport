@@ -69,14 +69,10 @@ __declspec(dllexport)
 
 ## def和dllexport的区别
 ```
-  1. 可以在.def文件中的导出函数名后加@n，表示要导出函数的序号为n
-    （在进行函数调用时，这个序号将发挥其作用）
-    是否加后缀  通过GetProcAddress(hmod, "TestAdd")方式 都可行
-    
-  2. 若通过dllexport方式
+  1. 若通过dllexport方式
     当用于其他语言 vb delphi等 就获取不了地址了 需要额外加参数
-    __declspec(dllexport) int __stdcall Add()
-    会转换为Add@0
+    __declspec(dllexport) int __stdcall TestAdd()
+    会转换为TestAdd@0
 
     Declare Function Add Lib "add.dll" Alias "TestAdd@0" () As Long
     @后面的数由于参数类型不同而可能不同
